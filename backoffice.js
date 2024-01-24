@@ -81,7 +81,6 @@ let container = document.createElement("div");
 container.setAttribute("class", "container-products");
 
 const deleteForm = async (id) => {
-  console.log(id);
   try {
     let response = await fetch(api + id, {
       method: "DELETE",

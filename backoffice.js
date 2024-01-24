@@ -81,7 +81,7 @@ let container = document.createElement("div");
 container.setAttribute("class", "container-products");
 
 const deleteForm = async (id) => {
-    console.log(id);
+  console.log(id);
   try {
     let response = await fetch(api + id, {
       method: "DELETE",
@@ -151,23 +151,15 @@ const getFetch = async () => {
         </div>`;
     });
 
-    //   const nameProduct = document.querySelector(".name-product");
-    //   const brandProduct = document.querySelector(".brand-product");
-    //   const descriptionProduct = document.querySelector("description-product");
-    //   const priceProduct = document.querySelector(".price-product");
-    //   const imgProduct = document.querySelector("")
-
     const buttonRemove = document.querySelectorAll(".remove");
 
     for (let i = 0; i < buttonRemove.length; i++) {
       buttonRemove[i].addEventListener("click", function () {
         deleteForm(buttonRemove[i].id);
-        
-       
-    });
-}
-} catch (error) {
+      });
+    }
+  } catch (error) {
     console.error("error", error);
-}
+  }
 };
 getFetch();

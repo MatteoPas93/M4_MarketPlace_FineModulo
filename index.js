@@ -188,8 +188,7 @@ const addFetch = () => {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4"
-,
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4",
         },
       });
       const data = await response.json();
@@ -206,8 +205,7 @@ const getFetch = async () => {
       headers: {
         method: "GET",
         Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4"
-,
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4",
         Accept: "application/json",
       },
     });
@@ -247,7 +245,6 @@ const getFetch = async () => {
               </div>
       </div>`;
     });
-
   } catch (error) {
     console.error("error", error);
   }
@@ -255,21 +252,22 @@ const getFetch = async () => {
 getFetch();
 
 
+// !FUNCTION DELETE 
+// !(Utilizzata per cancellare un array sbagliato usato precedentemente)
 
+// async function deleteProducts() {
+//   try {
+//     newProducts.map(async (product) => {
+//       let response = await fetch(api + product._id, {
+//         method: "DELETE",
+//         headers: {
+//           Authorization:
+//             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4",
+//         },
+//       });
+//     });
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
-async function deleteProducts() {
-  try {
-    newProducts.map(async (product) => {
-    let response = await fetch(api + product._id, {
-      method: "DELETE",
-      headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4"
-      }
-    })
- }) 
- } catch(error) {
-  console.error(error)
- }
-}
-// deleteProducts()

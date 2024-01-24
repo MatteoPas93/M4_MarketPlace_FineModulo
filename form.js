@@ -1,5 +1,23 @@
+const nav = document.querySelector(".navbar");
+nav.innerHTML = `<div class="container-fluid">
+<h2> MarketPlace </h2>
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbarNavDropdown">
+   <ul class="navbar-nav">
+     <li class="nav-item dropdown">
+       <button class="form-add"> <a href="./formAdd.html"> Aggiungi prodotti </a> </button>
+       <button class="backoffice"> <a href="./backoffice.html"> BackOffice </a> </button>
+       <button class="home"> <a href="./index.html"> Home </a> </button>       
+       </li>
+   </ul>
+ </div>
+</div>`
+
+
 const nameInput = document.getElementById("inputName");
-const descriptionInput = document.getElementById("inputDesc");
+const descriptionInput = document.getElementById("inputDescription");
 const brandInput = document.getElementById("inputBrand");
 const urlInput = document.getElementById("InputUrl");
 const priceInput = document.getElementById("inputPrice");
@@ -18,7 +36,7 @@ const functionPost = async (prodotto) => {
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4",
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4",
       },
     });
   } catch (error) {
@@ -27,14 +45,15 @@ const functionPost = async (prodotto) => {
 };
 
 submitBtn.addEventListener("click", async function () {
-  let newProduct = {
-    name: nameInput.value,
+    let newProduct = {
+        name: nameInput.value,
     description: descriptionInput.value,
     brand: brandInput.value,
     imageUrl: urlInput.value,
     price: priceInput.value,
-  };
+};
 
-  await functionPost(newProduct);
-  window.location.assign("./index.html");
+await functionPost(newProduct);
+window.location.assign("./index.html");
 });
+

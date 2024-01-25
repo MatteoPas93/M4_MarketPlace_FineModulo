@@ -33,7 +33,7 @@ check.addEventListener("change", function () {
 
 const functionEdit = async (prodotto) => {
   try {
-    await fetch(api + prodotto._id, {
+    await fetch(api + prodotto, {
       method: "PUT",
       body: JSON.stringify(prodotto),
       headers: {
@@ -54,11 +54,11 @@ submitBtn.addEventListener("click", async function () {
              brand: putBrandInput.value,
              price: putPriceInput.value,
             };
-            console.log("i prodotti sono:" , productEdit);
+            console.log("I prodotti sono:" , productEdit);
 
 
 await functionEdit(productEdit);
-window.location.assign("./backoffice.html");
+// window.location.assign("./backoffice.html");
 });
 
 

@@ -33,7 +33,7 @@ check.addEventListener("change", function () {
 
 const functionEdit = async (prodotto) => {
   try {
-    await fetch(api + prodotto, {
+    await fetch(api, {
       method: "PUT",
       body: JSON.stringify(prodotto),
       headers: {
@@ -46,6 +46,7 @@ const functionEdit = async (prodotto) => {
     console.error("error", error);
   }
 };
+
 
 submitBtn.addEventListener("click", async function () {
     let productEdit = {

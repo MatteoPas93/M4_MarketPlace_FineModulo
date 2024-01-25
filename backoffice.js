@@ -127,14 +127,14 @@ const getFetch = async () => {
            <li class="nav-item dropdown">
              <button class="form-add"> <a href="./formAdd.html"> Aggiungi prodotti </a> </button>
              <button class="backoffice"> <a href="./index.html"> Home </a> </button>
-  </a>         </li>
+          </li>
          </ul>
        </div>
      </div>
    </nav>`;
 
     productsApi.map((allProducts) => {
-      container.innerHTML += `<div class="card col-4">
+      container.innerHTML += `<div class="card col-4 product">
                   <img class="img-product" src="${allProducts.imageUrl}"/>
               <div class="description-products">
                  <h5 class="name-product"> ${allProducts.name} </h5>

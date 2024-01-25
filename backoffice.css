@@ -19,7 +19,7 @@
 }
 
 .card {
-  width: 275px;
+  width: 280px;
   height: auto;
   margin-block: 10px;
   border: 1px solid black;
@@ -48,35 +48,25 @@
 }
 
 .button-card button {
-  width: 75px;
+  width: 80px;
   height: 35px;
 }
 
-.form-add {
+.button-card button a {
+  text-decoration: none;
+  color: black;
+}
+
+.form-add, .backoffice {
   border: none;
   background: white;
   margin-left: 20px;
   font-size: 20px;
 }
 
-.form-add a {
+.form-add a, .backoffice a {
   text-decoration: none;
   color: black;
 }
 
-.backoffice {
-  border: none;
-  background: white;
-  margin-left: 20px;
-  font-size: 20px;
-}
 
-.backoffice a {
-  text-decoration: none;
-  color: black;
-}
-
-.details a {
-  text-decoration: none;
-  color: black;
-}

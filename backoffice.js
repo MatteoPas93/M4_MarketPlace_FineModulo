@@ -1,3 +1,5 @@
+
+
 const api = "https://striveschool-api.herokuapp.com/api/product/";
 const products = [
   {
@@ -116,7 +118,7 @@ const getFetch = async () => {
 
     nav.innerHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
      <div class="container-fluid">
-      <h2> MarketPlace </h2>
+      <h2> TechOnlineShop </h2>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
@@ -147,8 +149,20 @@ const getFetch = async () => {
                <div class="button-details">
                    <button class="details"> <a href="./productDetail.html?id=${allProducts._id}"> Dettagli </a> </button>
                 </div>
+                <div class="button-edit">
+                <button class="edit"> <a href="./formPut.html?id=${allProducts._id}"> Modifica </a> </button>
+                </div>
         </div>`;
     });
+
+    const buttonEdit = document.querySelectorAll(".edit");
+    
+    for (let i = 0; i < buttonEdit.length; i++) {
+      buttonEdit[i].addEventListener("click", function() {
+        functionEdit(buttonEdit[i].prodotto._id)
+      })
+    }
+
 
     const buttonRemove = document.querySelectorAll(".remove");
 
@@ -162,3 +176,4 @@ const getFetch = async () => {
   }
 };
 getFetch();
+

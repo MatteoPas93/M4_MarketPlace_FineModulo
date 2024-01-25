@@ -1,3 +1,5 @@
+const api = "https://striveschool-api.herokuapp.com/api/product/";
+
 const nav = document.querySelector(".navbar");
 nav.innerHTML = `<div class="container-fluid">
 <h2> TechOnlineShop </h2>
@@ -16,22 +18,23 @@ nav.innerHTML = `<div class="container-fluid">
 </div>`
 
 
-const nameInput = document.getElementById("inputName");
-const descriptionInput = document.getElementById("inputDescription");
-const brandInput = document.getElementById("inputBrand");
-const urlInput = document.getElementById("InputUrl");
-const priceInput = document.getElementById("inputPrice");
-const submitBtn = document.getElementById("submitBtn");
-const check = document.getElementById("check");
+const putNameInput = document.getElementById("inputName");
+const putDescriptionInput = document.getElementById("inputDescription");
+const putBrandInput = document.getElementById("inputBrand");
+const putImageUrlInput = document.getElementById("inputImageUrl");
+const putPriceInput = document.getElementById("inputPrice");
+const check = document.getElementById("check1")
+const submitBtn = document.getElementById("submitBtn")
 
 check.addEventListener("change", function () {
-  submitBtn.classList.toggle("disabled");
-});
+    submitBtn.classList.toggle("disabled");
+  });
 
-const functionPost = async (prodotto) => {
+
+const functionEdit = async (prodotto) => {
   try {
-    await fetch("https://striveschool-api.herokuapp.com/api/product/", {
-      method: "POST",
+    await fetch(api + prodotto._id, {
+      method: "PUT",
       body: JSON.stringify(prodotto),
       headers: {
         "Content-Type": "application/json",
@@ -45,15 +48,17 @@ const functionPost = async (prodotto) => {
 };
 
 submitBtn.addEventListener("click", async function () {
-    let newProduct = {
-        name: nameInput.value,
-    description: descriptionInput.value,
-    brand: brandInput.value,
-    imageUrl: urlInput.value,
-    price: priceInput.value,
-};
+    let productEdit = {
+             name: putNameInput.value,
+             description: putDescriptionInput.value,
+             brand: putBrandInput.value,
+             price: putPriceInput.value,
+            };
+            console.log("i prodotti sono:" , productEdit);
 
-await functionPost(newProduct);
-window.location.assign("./index.html");
+
+await functionEdit(productEdit);
+window.location.assign("./backoffice.html");
 });
+
 

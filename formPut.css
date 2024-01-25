@@ -5,6 +5,7 @@
   font-weight: bold;
   font-size: 45px;
 }
+
 .nav-item button {
   border: none;
   background: none;
@@ -15,24 +16,4 @@
 .nav-item button a {
   text-decoration: none;
   color: black;
-}
-
-.container-card {
-  text-align: center;
-  margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.img-dettagli {
-  width: 300px;
-}
-
-.info {
-  width: 400px;
-  text-align: start;
 }

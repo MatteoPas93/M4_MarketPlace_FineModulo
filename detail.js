@@ -2,8 +2,6 @@ const api = "https://striveschool-api.herokuapp.com/api/product/";
 const params = new URLSearchParams(location.search);
 const productsId = params.get("id");
 
-
-
 async function details() {
   try {
     let response = await fetch(api + productsId, {
@@ -18,12 +16,11 @@ async function details() {
 
     let nav = document.createElement("nav");
     nav.setAttribute("class", "container-nav");
-    document.body.appendChild(nav)
+    document.body.appendChild(nav);
 
     const detailsContainer = document.createElement("div");
     detailsContainer.setAttribute("id", "details-container");
     document.body.appendChild(detailsContainer);
-    
 
     nav.innerHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -41,7 +38,7 @@ async function details() {
         </ul>
       </div>
     </div>
-  </nav>`
+  </nav>`;
 
     detailsContainer.innerHTML = ` <div class="container-card">
          <img class="img-dettagli" src="${data.imageUrl}" alt="Product Image">

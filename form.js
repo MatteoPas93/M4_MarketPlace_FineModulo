@@ -13,8 +13,7 @@ nav.innerHTML = `<div class="container-fluid">
        </li>
    </ul>
  </div>
-</div>`
-
+</div>`;
 
 const nameInput = document.getElementById("inputName");
 const descriptionInput = document.getElementById("inputDescription");
@@ -36,7 +35,7 @@ const functionPost = async (prodotto) => {
       headers: {
         "Content-Type": "application/json",
         Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4",
       },
     });
   } catch (error) {
@@ -45,15 +44,14 @@ const functionPost = async (prodotto) => {
 };
 
 submitBtn.addEventListener("click", async function () {
-    let newProduct = {
-        name: nameInput.value,
-        description: descriptionInput.value,
-        brand: brandInput.value,
-        imageUrl: urlInput.value,
-        price: priceInput.value,
-};
+  let newProduct = {
+    name: nameInput.value,
+    description: descriptionInput.value,
+    brand: brandInput.value,
+    imageUrl: urlInput.value,
+    price: priceInput.value,
+  };
 
-await functionPost(newProduct);
-window.location.assign("./index.html");
+  await functionPost(newProduct);
+  window.location.assign("./index.html");
 });
-

@@ -153,8 +153,7 @@ const getFetch = async () => {
 };
 getFetch();
 
-
-// !FUNCTION DELETE 
+// !FUNCTION DELETE
 // !(Utilizzata per cancellare un array sbagliato usato precedentemente)
 
 // async function deleteProducts() {
@@ -172,4 +171,3 @@ getFetch();
 //     console.error(error);
 //   }
 // }
-

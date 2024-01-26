@@ -19,7 +19,7 @@
 }
 
 .card {
-  width: 275px;
+  width: 280px;
   height: auto;
   margin-block: 10px;
   border: 1px solid black;
@@ -38,7 +38,12 @@
 
 .card button {
   border-radius: 5px 5px 5px 0px;
+  box-shadow: -2px 2px 5px 2px rgb(159, 158, 158);
   margin-bottom: 10px;
+}
+
+.card button:hover {
+  transform: scale(1.05);
 }
 
 .button-card {

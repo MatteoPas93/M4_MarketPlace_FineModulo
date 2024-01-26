@@ -92,7 +92,7 @@ const deleteForm = async (id) => {
       },
     });
     const data = await response.json();
-    alert(data.name + "Eliminato correttamente");
+    alert(data.name + " Eliminato correttamente");
     window.location.assign("./index.html");
   } catch (error) {
     console.error("error", error);
@@ -139,7 +139,7 @@ const getFetch = async () => {
                  <h5 class="name-product"> ${allProducts.name} </h5>
                  <h5 class="brand-product"> ${allProducts.brand} </h5>
                  <p class="description-product"> ${allProducts.description} </p>
-              <h4 class="product-price"> ${allProducts.price} <h4> 
+              <h4 class="product-price"> ${allProducts.price} € <h4> 
               </div>
                <div class="button-card">
               <div class="button-remove">

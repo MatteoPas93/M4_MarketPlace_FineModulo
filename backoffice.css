@@ -38,6 +38,11 @@
 
 .card button {
   border-radius: 5px 5px 5px 0px;
+  box-shadow: -2px 2px 5px 2px rgb(159, 158, 158);
+}
+
+.card button:hover {
+  transform: scale(1.05);
 }
 
 .button-card {

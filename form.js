@@ -22,7 +22,7 @@ const brandInput = document.getElementById("inputBrand");
 const urlInput = document.getElementById("InputUrl");
 const priceInput = document.getElementById("inputPrice");
 const submitBtn = document.getElementById("submitBtn");
-const check = document.getElementById("check");
+const check = document.getElementById("check1");
 
 check.addEventListener("change", function () {
   submitBtn.classList.toggle("disabled");
@@ -47,10 +47,10 @@ const functionPost = async (prodotto) => {
 submitBtn.addEventListener("click", async function () {
     let newProduct = {
         name: nameInput.value,
-    description: descriptionInput.value,
-    brand: brandInput.value,
-    imageUrl: urlInput.value,
-    price: priceInput.value,
+        description: descriptionInput.value,
+        brand: brandInput.value,
+        imageUrl: urlInput.value,
+        price: priceInput.value,
 };
 
 await functionPost(newProduct);

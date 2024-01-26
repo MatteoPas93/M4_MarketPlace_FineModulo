@@ -1,5 +1,4 @@
 
-
 const api = "https://striveschool-api.herokuapp.com/api/product/";
 const products = [
   {
@@ -159,7 +158,7 @@ const getFetch = async () => {
     
     for (let i = 0; i < buttonEdit.length; i++) {
       buttonEdit[i].addEventListener("click", function() {
-        functionEdit(buttonEdit[i].prodotto._id)
+        functionEdit(buttonEdit[i].id)
       })
     }
 
@@ -176,4 +175,5 @@ const getFetch = async () => {
   }
 };
 getFetch();
+
 

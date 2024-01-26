@@ -1,3 +1,5 @@
+import { functionEdit } from "./functionedit.js";
+
 const api = "https://striveschool-api.herokuapp.com/api/product/";
 
 const nav = document.querySelector(".navbar");
@@ -15,51 +17,53 @@ nav.innerHTML = `<div class="container-fluid">
        </li>
    </ul>
  </div>
-</div>`
-
+</div>`;
 
 const putNameInput = document.getElementById("inputName");
 const putDescriptionInput = document.getElementById("inputDescription");
 const putBrandInput = document.getElementById("inputBrand");
-const putImageUrlInput = document.getElementById("inputImageUrl");
 const putPriceInput = document.getElementById("inputPrice");
-const check = document.getElementById("check1")
-const submitBtn = document.getElementById("submitBtn")
+const check = document.getElementById("check1");
+const submitBtn = document.getElementById("submitBtn");
+
+const params = new URLSearchParams(location.search);
+const id = params.get("id");
 
 check.addEventListener("change", function () {
-    submitBtn.classList.toggle("disabled");
-  });
+  submitBtn.classList.toggle("disabled");
+});
 
-
-const functionEdit = async (prodotto) => {
+const getEdit = async (id) => {
   try {
-    await fetch(api, {
-      method: "PUT",
-      body: JSON.stringify(prodotto),
+    const response = await fetch(api + id, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OWYwM2RjZjZkNzAwMTgzODZmZDAiLCJpYXQiOjE3MDYxMDcxMDcsImV4cCI6MTcwNzMxNjcwN30.8b4I9XXkV9GritlMKOBybozeP41fVcTDVkXJIDOAMf4",
       },
     });
+    const data = await response.json();
+
+    putNameInput.value = data.name;
+    putDescriptionInput.value = data.description;
+    putBrandInput.value = data.brand;
+    putPriceInput.value = data.price;
   } catch (error) {
-    console.error("error", error);
+    console.error(error);
   }
 };
-
+getEdit(id);
 
 submitBtn.addEventListener("click", async function () {
-    let productEdit = {
-             name: putNameInput.value,
-             description: putDescriptionInput.value,
-             brand: putBrandInput.value,
-             price: putPriceInput.value,
-            };
-            console.log("I prodotti sono:" , productEdit);
+  let productEdit = {
+    name: putNameInput.value,
+    description: putDescriptionInput.value,
+    brand: putBrandInput.value,
+    price: putPriceInput.value,
+  };
+  console.log("I prodotti sono:", productEdit);
 
-
-await functionEdit(productEdit);
-// window.location.assign("./backoffice.html");
+  await functionEdit(id, productEdit);
+  window.location.assign("./backoffice.html");
 });
-
-

@@ -40,7 +40,7 @@ document
     if (passwordInput.value === "NewAdmin") {
       window.location.href = "./backoffice.html";
     } else {
-        alert("Password errata. Riprova.");
+        alert("Password errata.");
         passwordInput.value = ""
     }
   });

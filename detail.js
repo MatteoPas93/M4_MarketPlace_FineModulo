@@ -40,14 +40,16 @@ async function details() {
     </div>
   </nav>`;
 
-    detailsContainer.innerHTML = ` <div class="container-card">
+    detailsContainer.innerHTML = ` <div class="container-product">
+     <div class="container-card">
          <img class="img-dettagli" src="${data.imageUrl}" alt="Product Image">
            <div class="info">
               <h1> ${data.name} </h1>
                <p> Descrizione prodotto: ${data.description} </p>
                 <p> Prezzo: ${data.price} € </p>
               </div>
-              </div>
+            </div>
+         </div>
                     `;
   } catch (error) {
     alert(error);

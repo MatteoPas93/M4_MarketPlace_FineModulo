@@ -14,6 +14,7 @@
   color: rgb(2, 200, 55);
   padding-right: 50px;
 }
+
 .nav-item button {
   border: none;
   background: rgb(2, 200, 55);
@@ -27,7 +28,16 @@
   color: black;
 }
 
+.container-product {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
 .container-card {
+  width: 60%;
   text-align: center;
   margin-top: 50px;
   display: flex;
@@ -36,6 +46,11 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  background: rgb(58, 58, 58);
+  border-radius: 5px 5px 5px 0px;
+  border: 2px solid rgb(2, 200, 55);
+  color: white;
+  box-shadow: 0px 20px 20px 0px black;
 }
 
 .img-dettagli {

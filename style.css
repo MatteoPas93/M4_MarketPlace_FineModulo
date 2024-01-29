@@ -3,6 +3,12 @@
 
 .container-fluid {
     box-shadow: 5px 5px  25px -5px #000000;
+    background: rgb(58, 58, 58);
+}
+
+.container-fluid button {
+  border-radius: 5px;
+  background: rgb(2, 200, 55);
 }
 
 .container-fluid h2 {
@@ -10,6 +16,8 @@
   font-weight: bold;
   font-size: 45px;
   text-shadow: 4px 4px 4px rgb(162, 160, 160);
+  color: rgb(2, 200, 55);
+  padding-right: 50px;
 }
 
 .container-products {
@@ -20,6 +28,9 @@
   margin-top: 35px;
   box-shadow: 0px 20px 20px 0px black;
   padding-inline: 25px;
+  background: rgb(58, 58, 58);
+  border-radius: 5px 5px 5px 0px;
+  border: 2px solid rgb(2, 200, 55);
 }
 
 .card {
@@ -28,6 +39,7 @@
   margin-block: 10px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px 5px 5px 0px;
+  border: 2px solid black;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -44,6 +56,7 @@
   border-radius: 5px 5px 5px 0px;
   box-shadow: -2px 2px 5px 2px rgb(159, 158, 158);
   margin-bottom: 10px;
+  background: rgb(2, 200, 55);
 }
 
 .card button:hover {

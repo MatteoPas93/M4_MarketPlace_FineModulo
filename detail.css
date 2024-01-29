@@ -2,17 +2,22 @@
 
 .container-fluid {
   box-shadow: 5px 5px  25px -5px #000000;
+  background: rgb(58, 58, 58);
 }
+
 
 .container-fluid h2 {
   font-family: "Caveat";
   font-weight: bold;
   font-size: 45px;
   text-shadow: 4px 4px 4px rgb(162, 160, 160);
+  color: rgb(2, 200, 55);
+  padding-right: 50px;
 }
 .nav-item button {
   border: none;
-  background: none;
+  background: rgb(2, 200, 55);
+  border-radius: 5px;
   font-size: 20px;
   margin-left: 20px;
 }
